@@ -11,9 +11,6 @@ namespace DiscordFP2
         public string details;
         public string state;
 
-        //public int currentPartySize;
-        //public int maxPartySize;
-
         public long elapsedTime;
 
         public long startTime;

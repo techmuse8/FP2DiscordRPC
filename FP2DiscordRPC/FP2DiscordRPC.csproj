@@ -30,22 +30,22 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\FP2_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="FP2Lib">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\plugins\lib\FP2Lib.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\BepInEx\plugins\lib\FP2Lib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\FP2_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\FP2_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\FP2_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Freedom Planet 2\FP2_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 
