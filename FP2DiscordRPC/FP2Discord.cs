@@ -13,7 +13,7 @@ namespace DiscordFP2
 {
     public class FP2Discord
     {
-        private Discord.Discord _discord = new Discord.Discord(FP2Constants.applicationID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord); //TODO, put in constants?
+        private Discord.Discord _discord = new Discord.Discord(FP2Constants.applicationID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
         public FP2Status status = new FP2Status();
         private FPCharacterID currentPlayerID;
 
@@ -26,13 +26,12 @@ namespace DiscordFP2
 
                 status.smallImage = string.Empty;
                 status.smallText = string.Empty;
-
+                
                 //status.startTime = 0;
-                //status.currentStage = Stage.NONE;
 
             //Debug.LogWarning($"Active Player: {currentPlayerID}");
-            Scene currentScene = SceneManager.GetActiveScene();
-           // char currentPlayer = FPSaveManager.character;
+           Scene currentScene = SceneManager.GetActiveScene();
+
            if (FPSaveManager.character >= (FPCharacterID)5) // Account for any additional custom character slots
             {
                 status.smallImage = "unkchar"; // Replace with unknown character icon
@@ -40,7 +39,7 @@ namespace DiscordFP2
             }
             switch (FPSaveManager.character)
             {
-                case 0: // Lilac
+                case (FPCharacterID)0: // Lilac
                     status.smallImage = "lilacicon"; 
                     status.smallText = "Lilac the Dragon";
                     break;
@@ -64,6 +63,9 @@ namespace DiscordFP2
             if (FPStage.currentStage.stageName != "")
             {
                 status.details = FPStage.currentStage.stageName; // TODO: Add the images and crap
+                status.stageImageName = FPStage.currentStage.stageName;
+                GetStageImage();
+                status.largeImage = status.stageImageName;
             }
             // In the main menu
             //Debug.LogWarning($"Active Scene: {currentScene.name}");
@@ -128,6 +130,17 @@ namespace DiscordFP2
             UpdateGameActivity();
 
             _discord.RunCallbacks();
+        }
+
+        public void GetStageImage()
+        {
+            // I'm honestly kind of a genius for coming up with this solution so that I don't have to manually set the stage icon asset names, which results in a more modular solution
+
+            status.stageImageName = FPStage.currentStage.stageName.ToLower(); 
+            status.stageImageName = status.stageImageName.Replace(" ", "");
+    #if DEBUG
+            Debug.LogWarning($"Lowercase stage img name: {status.stageImageName}");
+    #endif
         }
     }
 }

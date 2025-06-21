@@ -10,6 +10,7 @@ namespace DiscordFP2
     {
         public string details;
         public string state;
+        public string stageImageName;
 
         public long elapsedTime;
 
