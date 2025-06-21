@@ -12,7 +12,5 @@ namespace DiscordFP2
     {
         public static long applicationID = 1385430928502816788;
 
-       // public static string[] stageIcons = new string[] { "", "", "", "" }; // TODO: Implement stage icons
-
     }
 }

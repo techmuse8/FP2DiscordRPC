@@ -134,13 +134,23 @@ namespace DiscordFP2
 
         public void GetStageImage()
         {
-            // I'm honestly kind of a genius for coming up with this solution so that I don't have to manually set the stage icon asset names, which results in a more modular solution
+            Scene currentScene = SceneManager.GetActiveScene();
 
-            status.stageImageName = FPStage.currentStage.stageName.ToLower(); 
-            status.stageImageName = status.stageImageName.Replace(" ", "");
+            if (currentScene.name == "Bakunawa5") // Check if the active stage is Weapon's Core, as an edge case scenario for how this stage works
+            {
+                status.stageImageName = "weaponscore";
+                status.details = "Weapon's Core";  // TODO: Find out how to get the string of Weapon's Core dynamically
+            }
+            else
+            {
+                // I'm honestly kind of a genius for coming up with this solution so that I don't have to manually set the stage icon asset names, which results in a more modular solution
+                // For example, "Dragon Valley" becomes "dragonvalley", which is the name of the appropriate Discord RPC asset
+                status.stageImageName = FPStage.currentStage.stageName.ToLower();
+                status.stageImageName = status.stageImageName.Replace(" ", "");
     #if DEBUG
-            Debug.LogWarning($"Lowercase stage img name: {status.stageImageName}");
+                Debug.LogWarning($"Lowercase stage img name: {status.stageImageName}");
     #endif
+            }
         }
     }
 }

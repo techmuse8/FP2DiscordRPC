@@ -34,7 +34,7 @@ namespace DiscordFP2
     #if DEBUG
             Scene currentScene = SceneManager.GetActiveScene();
             consoleLog.LogInfo($"Active Character ID: {FPSaveManager.character}");
-            consoleLog.LogInfo(FPAudio.GetCurrentMusic()); // 
+            //consoleLog.LogInfo(FPAudio.GetCurrentMusic()); // 
             consoleLog.LogInfo($"Active Stage: {FPStage.currentStage.stageName}");
     #endif
             gameDiscord.UpdateDiscord();
