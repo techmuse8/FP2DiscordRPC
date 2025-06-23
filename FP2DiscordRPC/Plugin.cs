@@ -22,12 +22,12 @@ namespace DiscordFP2
         private void Awake()
         {
             consoleLog = Logger;
-            consoleLog.LogInfo($"Plugin techmuse_FP2DiscordRPC loading...");
+            consoleLog.LogInfo($"Plugin FP2DiscordRPC loading...");
 
             DisplayMissionObjective = Config.Bind("General", DisplayMissionObjectiveKey, true);
             gameDiscord = new FP2Discord();
 
-            consoleLog.LogInfo($"Plugin techmuse_FP2DiscordRPC 1.0.0 is now running!");
+            consoleLog.LogInfo($"Plugin FP2DiscordRPC 1.0.0 is now running!");
         }
         private void Update()
         {
