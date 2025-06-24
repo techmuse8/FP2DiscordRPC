@@ -18,7 +18,8 @@ namespace DiscordFP2
         private FPCharacterID currentPlayerID;
 
         public void FetchGameInformation()
-        { 
+        {
+
                 status.details = string.Empty;
                 status.state = string.Empty;
                 status.largeImage = "main";
@@ -29,12 +30,11 @@ namespace DiscordFP2
                 
                 //status.startTime = 0;
 
-            //Debug.LogWarning($"Active Player: {currentPlayerID}");
            Scene currentScene = SceneManager.GetActiveScene();
 
            if (FPSaveManager.character >= (FPCharacterID)5) // Account for any additional custom character slots
             {
-                status.smallImage = "unkchar"; // Replace with unknown character icon
+                status.smallImage = "unkchar";
                 status.smallText = PlayerHandler.currentCharacter.Name; // Current custom character name attribute from FP2Lib
             }
             switch (FPSaveManager.character)
@@ -62,7 +62,7 @@ namespace DiscordFP2
 
             if (FPStage.currentStage.stageName != "")
             {
-                status.details = FPStage.currentStage.stageName; // TODO: Add the images and crap
+                status.details = FPStage.currentStage.stageName;
                 status.stageImageName = FPStage.currentStage.stageName;
                 GetStageImage();
                 status.largeImage = status.stageImageName;
@@ -119,7 +119,12 @@ namespace DiscordFP2
 
             _discord.GetActivityManager().UpdateActivity(activity, (res) =>
             {
-                if (res != Discord.Result.Ok) Debug.LogWarning("Failed connecting to Discord!");
+                if (res != Discord.Result.Ok)
+                {
+                    Debug.LogWarning("Failed connecting to Discord!");
+                    _discord?.Dispose();
+
+                }
             });
             
         }
@@ -129,7 +134,7 @@ namespace DiscordFP2
             FetchGameInformation();
             UpdateGameActivity();
 
-            _discord.RunCallbacks();
+            _discord.RunCallbacks(); // TODO: try to reconnect if Discord can't be detected
         }
 
         public void GetStageImage()
@@ -151,6 +156,11 @@ namespace DiscordFP2
                 Debug.LogWarning($"Lowercase stage img name: {status.stageImageName}");
     #endif
             }
+        }
+
+        public void DeinitDiscordRPC()
+        {
+            _discord?.Dispose();
         }
     }
 }
