@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.PlayerLoop;
 
 namespace DiscordFP2
 {
@@ -68,7 +67,6 @@ namespace DiscordFP2
                 status.largeImage = status.stageImageName;
             }
             // In the main menu
-            //Debug.LogWarning($"Active Scene: {currentScene.name}");
             if (currentScene.name == "MainMenu")
             {
                 status.details = "Main Menu";
@@ -91,9 +89,11 @@ namespace DiscordFP2
                 status.details = "Level Select (Classic Mode)";
             }
 
-              
+            GameObject isCutsceneActive = GameObject.Find("CutscenePauseMenu"); // Hacky way of detecting if you're in watching a cutscene or not
+
+            if (isCutsceneActive != null)   
             {
-               
+                status.details = "Watching a cutscene";
             }
         }
 
@@ -121,7 +121,7 @@ namespace DiscordFP2
             {
                 if (res != Discord.Result.Ok)
                 {
-                    Debug.LogWarning("Failed connecting to Discord!");
+                    //Debug.LogWarning("Failed connecting to Discord!");
                     _discord?.Dispose();
 
                 }
@@ -144,7 +144,7 @@ namespace DiscordFP2
             if (currentScene.name == "Bakunawa5") // Check if the active stage is Weapon's Core, as an edge case scenario for how this stage works
             {
                 status.stageImageName = "weaponscore";
-                status.details = "Weapon's Core";  // TODO: Find out how to get the string of Weapon's Core dynamically
+                status.details = "Weapon's Core";
             }
             else
             {

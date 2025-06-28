@@ -14,7 +14,7 @@ namespace DiscordFP2
         
         public static FP2Discord gameDiscord;
         public static ManualLogSource consoleLog;
-
+        public static Cutscene Cutscene2;
 
         private void Awake()
         {
@@ -27,12 +27,14 @@ namespace DiscordFP2
         }
         private void Update()
         {
-    #if DEBUG
+#if DEBUG
             Scene currentScene = SceneManager.GetActiveScene();
+            //FPCutscene currentCutscene;
             consoleLog.LogInfo($"Active Character ID: {FPSaveManager.character}");
             //consoleLog.LogInfo(FPAudio.GetCurrentMusic()); // 
             consoleLog.LogInfo($"Active Stage: {FPStage.currentStage.stageName}");
-    #endif
+            //consoleLog.LogInfo($"Cutscene stuff: {Cutscene2.sceneTitle}");
+#endif
 
             gameDiscord.UpdateDiscord();
         }
