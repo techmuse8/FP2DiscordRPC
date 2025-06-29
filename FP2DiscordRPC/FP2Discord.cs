@@ -89,12 +89,11 @@ namespace DiscordFP2
                 status.details = "Level Select (Classic Mode)";
             }
 
-            GameObject isCutsceneActive = GameObject.Find("CutscenePauseMenu"); // Hacky way of detecting if you're in watching a cutscene or not
-
-            if (isCutsceneActive != null)   
+            if (FPStage.eventIsActive)
             {
-                status.details = "Watching a cutscene";
+                status.state = "Watching a cutscene";
             }
+        
         }
 
         public void UpdateGameActivity()
@@ -136,7 +135,6 @@ namespace DiscordFP2
 
             _discord.RunCallbacks(); // TODO: try to reconnect if Discord can't be detected
         }
-
         public void GetStageImage()
         {
             Scene currentScene = SceneManager.GetActiveScene();

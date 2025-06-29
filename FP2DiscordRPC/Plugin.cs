@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using System;
 using System.Threading;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace DiscordFP2
@@ -14,13 +15,11 @@ namespace DiscordFP2
         
         public static FP2Discord gameDiscord;
         public static ManualLogSource consoleLog;
-        public static Cutscene Cutscene2;
 
         private void Awake()
         {
             consoleLog = Logger;
             consoleLog.LogInfo($"Plugin FP2DiscordRPC loading...");
-
             gameDiscord = new FP2Discord();
 
             consoleLog.LogInfo($"Plugin FP2DiscordRPC 1.0.0 is now running!");
@@ -29,11 +28,11 @@ namespace DiscordFP2
         {
 #if DEBUG
             Scene currentScene = SceneManager.GetActiveScene();
+
             //FPCutscene currentCutscene;
-            consoleLog.LogInfo($"Active Character ID: {FPSaveManager.character}");
-            //consoleLog.LogInfo(FPAudio.GetCurrentMusic()); // 
+            //consoleLog.LogInfo($"Active Character ID: {FPSaveManager.character}");
             consoleLog.LogInfo($"Active Stage: {FPStage.currentStage.stageName}");
-            //consoleLog.LogInfo($"Cutscene stuff: {Cutscene2.sceneTitle}");
+        
 #endif
 
             gameDiscord.UpdateDiscord();
