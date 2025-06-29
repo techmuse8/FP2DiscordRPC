@@ -21,7 +21,6 @@ namespace DiscordFP2
             consoleLog = Logger;
             consoleLog.LogInfo($"Plugin FP2DiscordRPC loading...");
             gameDiscord = new FP2Discord();
-
             consoleLog.LogInfo($"Plugin FP2DiscordRPC 1.0.0 is now running!");
         }
         private void Update()

@@ -15,6 +15,7 @@ namespace DiscordFP2
         private Discord.Discord _discord = new Discord.Discord(FP2Constants.applicationID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
         public FP2Status status = new FP2Status();
         private FPCharacterID currentPlayerID;
+        private long startTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds; // Done this way because DateTimeOffset.UtcNow.ToUnixTimeSeconds() doesn't exist in dotnet35
 
         public void FetchGameInformation()
         {
@@ -27,7 +28,6 @@ namespace DiscordFP2
                 status.smallImage = string.Empty;
                 status.smallText = string.Empty;
                 
-                //status.startTime = 0;
 
            Scene currentScene = SceneManager.GetActiveScene();
 
@@ -89,6 +89,7 @@ namespace DiscordFP2
                 status.details = "Level Select (Classic Mode)";
             }
 
+            // In a cutscene
             if (FPStage.eventIsActive)
             {
                 status.state = "Watching a cutscene";
@@ -111,8 +112,7 @@ namespace DiscordFP2
                     },
                 Timestamps =
                     {
-                        Start = status.startTime,
-                        End =  status.endTime,
+                        Start = startTime,
                     }
             };
 
