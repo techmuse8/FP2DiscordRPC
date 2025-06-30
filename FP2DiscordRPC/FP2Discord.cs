@@ -15,7 +15,7 @@ namespace DiscordFP2
         private Discord.Discord _discord = new Discord.Discord(FP2Constants.applicationID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
         public FP2Status status = new FP2Status();
         private FPCharacterID currentPlayerID;
-        private long startTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds; // Done this way because DateTimeOffset.UtcNow.ToUnixTimeSeconds() doesn't exist in dotnet35
+        private long startTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds; // Done this way because ToUnixTimeSeconds() doesn't exist in dotnet35
 
         public void FetchGameInformation()
         {
