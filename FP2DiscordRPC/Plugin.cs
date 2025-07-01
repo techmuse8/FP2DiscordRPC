@@ -24,16 +24,7 @@ namespace DiscordFP2
             consoleLog.LogInfo($"Plugin FP2DiscordRPC 1.0.0 is now running!");
         }
         private void Update()
-        {
-#if DEBUG
-            Scene currentScene = SceneManager.GetActiveScene();
-
-            //FPCutscene currentCutscene;
-            //consoleLog.LogInfo($"Active Character ID: {FPSaveManager.character}");
-            consoleLog.LogInfo($"Active Stage: {FPStage.currentStage.stageName}");
-        
-#endif
-
+        { 
             gameDiscord.UpdateDiscord();
         }
 
