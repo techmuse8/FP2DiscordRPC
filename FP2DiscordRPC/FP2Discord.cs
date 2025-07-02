@@ -65,6 +65,7 @@ namespace DiscordFP2
                 status.stageImageName = FPStage.currentStage.stageName;
                 GetStageImage();
                 status.largeImage = status.stageImageName;
+                status.state = "In a stage"; // TODO: Maybe check if are in a hub stage?
             }
 
             // In the main menu
