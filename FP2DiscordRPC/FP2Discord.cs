@@ -35,7 +35,7 @@ namespace DiscordFP2
                 status.smallImage = "unkchar";
                 status.smallText = PlayerHandler.currentCharacter.Name; // Current custom character name attribute from FP2Lib
             }
-            switch (FPSaveManager.character)
+            switch (FPSaveManager.character) // Displays the character you are currently playing as
             {
                 case (FPCharacterID)0: // Lilac
                     status.smallImage = "lilacicon"; 
@@ -58,18 +58,21 @@ namespace DiscordFP2
                     break;
             }
 
-            if (FPStage.currentStage.stageName != "")
+            // If the string for the stage title isn't blank then we're in a stage!
+            if (FPStage.currentStage.stageName != "") 
             {
                 status.details = FPStage.currentStage.stageName;
                 status.stageImageName = FPStage.currentStage.stageName;
                 GetStageImage();
                 status.largeImage = status.stageImageName;
             }
+
             // In the main menu
             if (currentScene.name == "MainMenu")
             {
                 status.details = "Main Menu";
             }
+
             // On the world map (in Adventure Mode)
             else if (currentScene.name == "AdventureMenu")
             {
@@ -82,10 +85,24 @@ namespace DiscordFP2
                 status.details = "Loading...";
             }
 
-            // On the level select (in Classic Mode)
+            // On the world map (in Classic Mode)
             else if (currentScene.name == "ClassicMenu")
             {
-                status.details = "Level Select (Classic Mode)";
+                status.details = "World Map (Classic Mode)";
+            }
+
+            // On the Battlesphere Area menu
+            else if (currentScene.name == "ArenaMenu")
+            {
+                status.details = "Battlesphere Arena Menu";
+                status.largeImage = "battlespherelobby";
+            }
+
+            // In a Battlesphere Home Run contest
+            else if (currentScene.name == "Battlesphere_Homerun")
+            {
+                status.details = "The Battlesphere (Home Run)";
+                status.largeImage = "battlespherehomerun";
             }
 
             // In a cutscene
@@ -155,7 +172,7 @@ namespace DiscordFP2
             }
         }
 
-        public void DeinitDiscordRPC()
+        public void DeinitDiscordRPC() // Properly cleans up Discord RPC when the game is closed
         {
             _discord?.Dispose();
         }
