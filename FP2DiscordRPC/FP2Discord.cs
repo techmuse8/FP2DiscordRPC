@@ -65,7 +65,8 @@ namespace DiscordFP2
                 status.stageImageName = FPStage.currentStage.stageName;
                 GetStageImage();
                 status.largeImage = status.stageImageName;
-                status.state = "In a stage"; // TODO: Maybe check if are in a hub stage?
+                status.largeText = FPStage.currentStage.stageName;
+                status.state = "In a stage";
             }
 
             // In the main menu
@@ -160,6 +161,7 @@ namespace DiscordFP2
             {
                 status.stageImageName = "weaponscore";
                 status.details = "Weapon's Core";
+                status.largeText = "Weapon's Core";
             }
             else
             {
