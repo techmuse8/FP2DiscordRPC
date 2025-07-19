@@ -11,12 +11,22 @@ While playing the game, the following details will be displayed on your profile:
 - The current menu you are in (i.e the world map in both Adventure and Classic Mode, the main menu, etc.)
 
 ## Screenshots
-<center>
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-1.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-2.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-3.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-4.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-5.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-6.png width='40%' />
- <img src=assets/screenshots/FP2DiscordRPC-screenshot-7.png width='40%' />
-</center>
+<table>
+  <tr>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-1.png" width="90%"></div></td>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-2.png" width="90%"></div></td>
+  </tr>
+  <tr>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-3.png" width="90%"></div></td>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-4.png" width="90%"></div></td>
+  </tr>
+  <tr>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-5.png" width="90%"></div></td>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-6.png" width="90%"></div></td>
+  </tr>
+  <tr>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-7.png" width="90%"></div></td>
+    <td><div style="text-align: center;"><img src="assets/screenshots/FP2DiscordRPC-screenshot-8.png" width="90%"></div></td>
+    <td></td>
+  </tr>
+</table>
