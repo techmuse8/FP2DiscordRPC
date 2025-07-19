@@ -1,7 +1,9 @@
 ﻿using Discord;
 using FP2Lib.Player;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -67,6 +69,7 @@ namespace DiscordFP2
                 status.largeImage = status.stageImageName;
                 status.largeText = FPStage.currentStage.stageName;
                 status.state = "In a stage";
+                CheckIfPaused();
             }
 
             // In the main menu
@@ -172,6 +175,20 @@ namespace DiscordFP2
     #if DEBUG
                 Debug.LogWarning($"Lowercase stage img name: {status.stageImageName}");
     #endif
+            }
+        }
+
+        public void CheckIfPaused()
+        {
+            switch (FPStage.state)
+            {
+                case (FPStageState)2: // Check if the game is paused
+                    status.state = status.state + " (Paused)";
+                    break;
+
+                case (FPStageState)1:
+                    status.state = "In a stage";
+                    break;
             }
         }
 
