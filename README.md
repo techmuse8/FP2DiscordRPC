@@ -13,28 +13,10 @@ While playing the game, the following details will be displayed on your profile:
 ## Screenshots
 <center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-1.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-2.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-3.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-4.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-5.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-6.png width='50%' />
-</center>
-
-<center>
  <img src=assets/screenshots/FP2DiscordRPC-screenshot-7.png width='50%' />
 </center>
