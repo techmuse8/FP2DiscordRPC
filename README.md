@@ -37,6 +37,8 @@ While playing the game, the following details will be displayed on your profile:
 - [Kuboroos](https://github.com/Kuborros) - Creating [FP2Lib](https://github.com/Kuborros/FP2Lib) which I used for obtaining a custom character's name for ones built using said framework.
 - [koenjicode](https://github.com/koenjicode) - Creating [DiscordRush](https://github.com/koenjicode/DiscordRush) which was a great reference for how to do something like this for a Unity game as someone who learned C# through this project.
 
+## Known Bugs
+- Restarting or launching Discord while the game is running will cause the plugin to stop working. You'll have to launch the game with Discord running in order for the plugin to work; I'm currently working on trying to sort out a fix for this issue.
 
 ## Building
 
