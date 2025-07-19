@@ -30,3 +30,20 @@ While playing the game, the following details will be displayed on your profile:
     <td></td>
   </tr>
 </table>
+
+
+## Credits
+
+- [Kuboroos](https://github.com/Kuborros) - Creating [FP2Lib](https://github.com/Kuborros/FP2Lib) which I used for obtaining a custom character's name for ones built using said framework.
+- [koenjicode](https://github.com/koenjicode) - Creating [DiscordRush](https://github.com/koenjicode/DiscordRush) which was a great reference for how to do something like this for a Unity game as someone who learned C# through this project.
+
+
+## Building
+
+Requirements:
+- A copy of [Visual Studio 2022](https://visualstudio.microsoft.com/) with the .NET Framework 3.5 development tools installed
+- The PC version of Freedom Planet 2 setup for modding with [Freedom Manager](https://gamebanana.com/tools/10870)
+- A copy of the Discord Game SDK 32-bit DLL (NOT the 64-bit one) from [here](https://discord.com/developers/docs/developer-tools/game-sdk)
+
+After meeting the requirements, add references to the `Assembly-CSharp.dll`, `UnityEngine.dll` and `FP2Lib.dll` assemblies, the former 2 of which can be found in `<FP2GameRoot>/FP2_Data/Managed` while the latter can be found in `<FP2GameRoot>/plugins/lib`.
+Once you add the references, you should be able to build the solution from there.
